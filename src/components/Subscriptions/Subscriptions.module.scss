@@ -1,0 +1,28 @@
+@import '../../theme.scss';
+
+.subscriptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color-general;
+  @include background-texture-otis-redding;
+  h1 {
+    margin: 0;
+    padding: 7.5rem 0 10rem;
+    font-size: 600%;
+    user-select: none;
+    @include rose-text-effect(0.5rem);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 82.5%;
+    margin: 0;
+    padding: 0 0 5rem;
+    list-style-type: none;
+  }
+}

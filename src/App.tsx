@@ -1,3 +1,5 @@
 import React, { FC } from 'react';
 
-export const App: FC = () => <></>;
+import { Subscriptions } from 'components/Subscriptions/Subscriptions';
+
+export const App: FC = () => <Subscriptions />;
