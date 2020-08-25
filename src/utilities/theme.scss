@@ -2,15 +2,16 @@ $background-color-general: #d52e3f;
 $rose-text-effect-colors: #eb452b, #efa032, #46b59b, #017e7f, #052939, #c11a2b, #c11a2b,
   #c11a2b, #c11a2b;
 
+@mixin background-general($color: $background-color-general) {
+  background-color: $color;
+  background-image: url('../assets/textures/otis-redding.png');
+}
+
 @mixin box-shadow-general {
   box-shadow: 0 0.28rem 0.22rem rgba(0, 0, 0, 0.034),
     0 0.67rem 0.53rem rgba(0, 0, 0, 0.048), 0 1.25rem 1rem rgba(0, 0, 0, 0.06),
     0 2.23rem 1.79rem rgba(0, 0, 0, 0.072), 0 4.18rem 3.34rem rgba(0, 0, 0, 0.086),
     0 10rem 8rem rgba(0, 0, 0, 0.12);
-}
-
-@mixin background-texture-otis-redding {
-  background-image: url('./assets/textures/otis-redding.png');
 }
 
 @mixin rose-text-effect($scale) {
@@ -29,4 +30,10 @@ $rose-text-effect-colors: #eb452b, #efa032, #46b59b, #017e7f, #052939, #c11a2b, 
   font-weight: bold;
   color: #fcedd8;
   text-shadow: $rose-text-shadow;
+}
+
+@mixin no-select {
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
 }

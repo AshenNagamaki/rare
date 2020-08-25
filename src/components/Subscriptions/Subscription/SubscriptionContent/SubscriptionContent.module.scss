@@ -1,0 +1,114 @@
+@import '../../../../utilities/theme.scss';
+
+$background-color: #fff;
+$border-radius-data: 5rem;
+
+.subscriptionContent {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  width: 100rem;
+  margin: 0 auto;
+  padding: 5rem;
+  border-radius: 1rem;
+  background-color: $background-color;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1000;
+  .rollUp {
+    position: absolute;
+    top: -0.25%;
+    left: -0.25%;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 0 0 10rem;
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.45);
+    outline: none;
+    opacity: 0.55;
+    cursor: pointer;
+    @include background-general(nth($rose-text-effect-colors, 2));
+  }
+  .logo {
+    flex: 0 0 35%;
+    align-self: center;
+    order: 1;
+    margin-right: auto;
+    img {
+      width: 30rem;
+      image-rendering: pixelated;
+      @include no-select;
+    }
+  }
+  .description {
+    flex-basis: 30%;
+    order: 2;
+    font-size: 150%;
+    .title {
+      margin: 0;
+      padding: 1.5rem;
+      border-radius: $border-radius-data;
+      font-size: 250%;
+      font-family: 'Pacifico', cursive;
+      font-weight: normal;
+      line-height: 4.5rem;
+      text-align: center;
+      color: $background-color;
+      @include background-general;
+    }
+    .status {
+      margin: 2.5rem 0;
+      font-size: 97.5%;
+      font-weight: bold;
+      text-align: center;
+      @include no-select;
+      &.active {
+        color: #32cd32;
+      }
+      &.pending {
+        color: #ffa500;
+      }
+      &.inactive {
+        color: #f00;
+      }
+    }
+    p {
+      margin: 0 0 2rem;
+      &:last-of-type {
+        margin: 0 0 1.5rem;
+      }
+    }
+    h3 {
+      margin: 2.5rem 0 0;
+      span {
+        font-size: 110%;
+      }
+    }
+    span {
+      margin: 1rem 0.75rem 0;
+      padding: 0.5rem 0.65rem;
+      border-radius: $border-radius-data;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 0.05rem;
+      color: $background-color;
+      @include background-general;
+    }
+  }
+  .since {
+    flex: 0 0 100%;
+    order: 3;
+    margin-top: 7.5rem;
+    font-size: 125%;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: overline;
+    text-align: center;
+    color: nth($rose-text-effect-colors, 2);
+    opacity: 0.55;
+    @include no-select;
+  }
+}

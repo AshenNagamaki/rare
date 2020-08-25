@@ -1,18 +1,26 @@
-@import '../../theme.scss';
+@import '../../utilities/theme.scss';
 
 .subscriptions {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $background-color-general;
-  @include background-texture-otis-redding;
-  h1 {
+  @include background-general;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    z-index: 100;
+  }
+  .heading {
     margin: 0;
     padding: 7.5rem 0 10rem;
     font-size: 600%;
-    user-select: none;
     @include rose-text-effect(0.5rem);
+    @include no-select;
   }
   ul {
     display: flex;
