@@ -35,7 +35,7 @@ export const Subscriptions: FC<SubscriptionsProps> = ({
 
   useEffect(() => {
     const listingEl = listingRef.current;
-    subscription !== null && disableBodyScroll(listingEl);
+    subscription !== null && disableBodyScroll(listingEl, { reserveScrollBarGap: true });
     return () => {
       enableBodyScroll(listingEl);
     };

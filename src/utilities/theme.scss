@@ -1,5 +1,6 @@
 $background-color-general: #d52e3f;
-$rose-text-effect-colors: #eb452b, #efa032, #46b59b, #017e7f, #052939, #c11a2b, #c11a2b,
+$color-interface: #efa032;
+$rose-text-effect-colors: #eb452b, #ffad3b, #46b59b, #017e7f, #052939, #c11a2b, #c11a2b,
   #c11a2b, #c11a2b;
 
 @mixin background-general($color: $background-color-general) {

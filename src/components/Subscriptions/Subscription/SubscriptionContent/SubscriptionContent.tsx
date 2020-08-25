@@ -27,7 +27,7 @@ const animationVariants = {
     },
   },
   exit: {
-    y: 1000,
+    y: 1250,
     transition: {
       duration: 0.35,
     },
@@ -36,9 +36,20 @@ const animationVariants = {
 
 export const SubscriptionContent: FC<SCProps> = ({ s, onCollapse }: SCProps) => {
   const precision = 2;
-  const periodFormatted = `${s.period}${s.periodUnit
-    .toLocaleLowerCase(s.locale)
-    .slice(0, 2)}.`;
+
+  const totalAmount = (
+    <NumberFormat
+      displayType="text"
+      value={(s.period * s.amount).toFixed(precision)}
+      prefix={getSymbolFromCurrency(s.currency)}
+      thousandSeparator
+      renderText={(value) => (
+        <span>{`${value}/${s.period}${s.periodUnit
+          .toLocaleLowerCase(s.locale)
+          .slice(0, 2)}.`}</span>
+      )}
+    />
+  );
 
   return (
     <motion.section
@@ -54,7 +65,7 @@ export const SubscriptionContent: FC<SCProps> = ({ s, onCollapse }: SCProps) => 
         className={classes.rollUp}
         onClick={onCollapse}
         whileHover={{ opacity: 0.7, scale: 1.5 }}
-        whileTap={{ opacity: 0.9, scale: 1.1 }}
+        whileTap={{ opacity: 0.9, scale: 1.25 }}
       />
       <motion.aside className={classes.logo} whileHover={{ scale: 1.02 }}>
         <motion.img
@@ -87,16 +98,7 @@ export const SubscriptionContent: FC<SCProps> = ({ s, onCollapse }: SCProps) => 
           Amount:<span>{s.amount.toFixed(precision)}</span>
         </p>
         <hr />
-        <h3>
-          Totally:
-          <NumberFormat
-            displayType="text"
-            value={(s.period * s.amount).toFixed(precision)}
-            prefix={getSymbolFromCurrency(s.currency)}
-            thousandSeparator
-            renderText={(value) => <span>{`${value}/${periodFormatted}`}</span>}
-          />
-        </h3>
+        <h3>Totally:{totalAmount}</h3>
       </article>
       <footer className={classes.since}>Since {getDate(s.createdAt, s.locale)}</footer>
     </motion.section>

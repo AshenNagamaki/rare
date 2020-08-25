@@ -3,8 +3,10 @@
 .subscriptions {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  width: 100%;
+  min-height: 100vh;
   @include background-general;
   .overlay {
     position: fixed;
@@ -17,9 +19,9 @@
   }
   .heading {
     margin: 0;
-    padding: 7.5rem 0 10rem;
+    padding: 5rem 0 10rem;
     font-size: 600%;
-    @include rose-text-effect(0.5rem);
+    @include rose-text-effect(0.35rem);
     @include no-select;
   }
   ul {

@@ -30,7 +30,7 @@ $border-radius-data: 5rem;
     outline: none;
     opacity: 0.55;
     cursor: pointer;
-    @include background-general(nth($rose-text-effect-colors, 2));
+    @include background-general($color-interface);
   }
   .logo {
     flex: 0 0 35%;
@@ -107,8 +107,8 @@ $border-radius-data: 5rem;
     font-style: italic;
     text-decoration: overline;
     text-align: center;
-    color: nth($rose-text-effect-colors, 2);
-    opacity: 0.55;
+    color: $color-interface;
+    opacity: 0.7;
     @include no-select;
   }
 }
