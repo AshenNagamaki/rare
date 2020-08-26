@@ -11,7 +11,7 @@ type SubscriptionsProps = {
   listing: SS;
 };
 
-const animationVariants = {
+const listingVariants = {
   visible: {
     opacity: 1,
     transition: {
@@ -61,7 +61,7 @@ export const Subscriptions: FC<SubscriptionsProps> = ({
         Subscriptions
       </motion.h1>
       {subscription !== null && <div className={classes.overlay} />}
-      <motion.ul initial="hidden" animate="visible" variants={animationVariants}>
+      <motion.ul initial="hidden" animate="visible" variants={listingVariants}>
         {subscriptions}
       </motion.ul>
     </section>

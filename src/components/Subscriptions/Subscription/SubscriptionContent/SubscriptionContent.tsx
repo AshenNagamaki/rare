@@ -13,7 +13,7 @@ type SCProps = {
   onCollapse: () => void;
 };
 
-const animationVariants = {
+const contentVariants = {
   visible: {
     y: 0,
     transition: {
@@ -60,7 +60,7 @@ export const SubscriptionContent: FC<SCProps> = ({ s, onCollapse }: SCProps) => 
       initial="hidden"
       animate="visible"
       exit="exit"
-      variants={animationVariants}>
+      variants={contentVariants}>
       <motion.button
         className={classes.rollUp}
         onClick={onCollapse}

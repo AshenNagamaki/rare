@@ -11,7 +11,7 @@ type SBProps = {
   disabled: boolean;
 };
 
-const animationVariants = {
+const briefVariants = {
   visible: { x: 0, opacity: 1 },
   hidden: { x: -100, opacity: 0 },
 };
@@ -31,7 +31,7 @@ export const SubscriptionBrief: FC<SBProps> = ({
     layoutId="subscription"
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.99 }}
-    variants={animationVariants}>
+    variants={briefVariants}>
     <motion.img src={logoURL} alt={title} crossOrigin="anonymous" decoding="auto" />
   </motion.li>
 );
